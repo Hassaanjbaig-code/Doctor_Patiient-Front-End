@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-inter bg-[#fafafa];
+}
+
+.Navbar {
+  @apply flex flex-col text-lg mt-2 justify-around;
+}
+
+.Navbar li a {
+  @apply flex gap-3 w-full items-center ml-2 p-3 cursor-pointer;
+}
+
+.Navbar li a:hover {
+  @apply bg-blue-400 w-full rounded-tl-lg rounded-bl-lg h-10 py-3;
+}
+
+main {
+  @apply bg-[#f0f0];
+}
+
+.google-map {
+  @apply relative;
+}
+
+.buttonC {
+  @apply w-24 h-16 border border-blue-400 hover:bg-blue-500 rounded-md hover:text-white transition duration-500 ease-linear select-none focus:outline-none focus:shadow-md bg-transparent mt-5 mb-5;
+}
+
+.google-map iframe {
+  @apply w-full h-full absolute left-0 right-0 rounded-lg;
+}

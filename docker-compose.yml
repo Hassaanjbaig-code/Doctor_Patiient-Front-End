@@ -1,0 +1,15 @@
+version: "3.4"
+
+services:
+  client:
+    image: node:alpine
+    container_name: client
+    entrypoint: /bin/sh
+    ports:
+      - 8000:8000
+    working_dir: /src/app
+    volumes:
+      - type: bind
+        source: ./
+        target: /src/app
+    tty: true
