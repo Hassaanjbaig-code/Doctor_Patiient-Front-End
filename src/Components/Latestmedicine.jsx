@@ -31,21 +31,21 @@ const Latestmedicine = () => {
       >
         <thead>
           <tr>
-            <th className="px-4 py-2">Name</th>
-            <th className="px-4 py-2">Timming</th>
-            <th className="px-4 py-2">Eatten</th>
+            <th className="md:px-4 py-2">Name</th>
+            <th className="md:px-4 py-2">Timming</th>
+            <th className="md:px-4 py-2">Eatten</th>
             <th className=""></th>
           </tr>
         </thead>
         <tbody>
           {medicines.map((item) => (
             <tr key={item.id}>
-              <td className="px-4 py-2">{item.name}</td>
-              <td className="px-4 py-2">{item.timming}</td>
-              <td className="px-4 py-2">
+              <td className=" py-2">{item.name}</td>
+              <td className=" py-2">{item.timming}</td>
+              <td className=" py-2">
                 {item.eatten == true ? "Done Eating" : "Not Eat"}
               </td>
-              <td className="px-4 py-2">
+              <td className=" py-2">
                 {medicineEdit == item.id ? (
                   <EditMedicine
                     // medicineEdit={medicineEdit}

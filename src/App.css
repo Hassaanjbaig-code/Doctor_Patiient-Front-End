@@ -8,16 +8,20 @@ body {
   @apply font-inter bg-[#fafafa];
 }
 
+.nav {
+  @apply z-50 fixed top-0 left-0 w-2/4 h-screen bg-white shadow-md;
+}
+
 .Navbar {
   @apply flex flex-col text-lg mt-2 justify-around;
 }
 
 .Navbar li a {
-  @apply flex gap-3 w-full items-center ml-2 p-3 cursor-pointer;
+  @apply flex gap-3 w-full items-center md:ml-2 ml-1 md:p-3 py-3  cursor-pointer;
 }
 
 .Navbar li a:hover {
-  @apply bg-blue-400 w-full rounded-tl-lg rounded-bl-lg h-10 py-3;
+  @apply bg-blue-400 w-full rounded-tl-lg rounded-bl-lg h-10 md:py-3;
 }
 
 main {
@@ -34,4 +38,8 @@ main {
 
 .google-map iframe {
   @apply w-full h-full absolute left-0 right-0 rounded-lg;
+}
+
+#Reason {
+  @apply bg-transparent;
 }

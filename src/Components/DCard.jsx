@@ -1,11 +1,30 @@
 import React, { useState } from "react";
-import CustumButton from "./CustumButton";
+import { spacing } from "@mui/system";
+import AppoitmentForm from "./AppoitmentForm";
+import Button from "@mui/material/Button";
 
 const DCard = ({ id, name, role, des, imageUrl, Gloction }) => {
-  const [DoctorId, setDoctorId] = useState(null);
+  const [DoctorId, setDoctorId] = useState(false);
+  const [UseDoctor, setUseDoctor] = useState({
+    id: null,
+    name: null,
+    open: false,
+  });
 
-  const handleClick = (id) => {
-    console.log(id);
+  const handleClick = (id, name) => {
+    // setDoctorId(true);
+    setUseDoctor({
+      id: id,
+      name: name,
+      open: true,
+    });
+  };
+  const CloseTheForm = () => {
+    setUseDoctor({
+      id: null,
+      name: null,
+    });
+    setDoctorId(false);
   };
   return (
     <li
@@ -29,7 +48,7 @@ const DCard = ({ id, name, role, des, imageUrl, Gloction }) => {
           {/* Gettng working of the map  */}
         </div>
         <div className="h-[17rem] w-full flex flex-col items-center ">
-          <div className="md:w-[22rem] w-56 h-56 object-fill border rounded-md shadow-md items-center google-map">
+          <div className="md:w-[22rem] w-56 h-56 object-fill border rounded-md shadow-md items-center google-map my-3">
             <iframe
               src={Gloction}
               loading="lazy"
@@ -39,14 +58,18 @@ const DCard = ({ id, name, role, des, imageUrl, Gloction }) => {
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
-          <CustumButton
-            type="button"
-            Write="Book Now"
-            classname="buttonC"
-            handleClick={() => handleClick(id)}
-          />
+          <Button onClick={() => handleClick(id, name)} variant="contained">
+            Book Appointment
+          </Button>
         </div>
       </div>
+      {UseDoctor.open == true && (
+        <AppoitmentForm
+          Doctor={UseDoctor}
+          CloseTheForm={CloseTheForm}
+          sx={{ mt: 4 }}
+        />
+      )}
     </li>
   );
 };
