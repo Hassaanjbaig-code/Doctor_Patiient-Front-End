@@ -3,7 +3,8 @@ import { spacing } from "@mui/system";
 import AppoitmentForm from "./AppoitmentForm";
 import Button from "@mui/material/Button";
 
-const DCard = ({ id, name, role, des, imageUrl, Gloction }) => {
+const DCard = (props) => {
+  const { id, name, role, des, imageUrl, Gloction } = props
   const [DoctorId, setDoctorId] = useState(false);
   const [UseDoctor, setUseDoctor] = useState({
     id: null,

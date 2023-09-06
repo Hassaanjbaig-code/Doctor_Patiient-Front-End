@@ -32,18 +32,21 @@ export const medicine = [
     id: 1,
     name: "Paracetamol",
     timming: "Morning",
+    des: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque, placeat fugiat. Blanditiis sed fugiat, amet sapiente inventore iure deserunt esse ullam quos, dignissimos ex, tempore voluptatibus perferendis. Soluta, facere aut?",
     eatten: true,
   },
   {
     id: 2,
     name: "Kentin",
     timming: "Morning",
+    des: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque, placeat fugiat. Blanditiis sed fugiat, amet sapiente inventore iure deserunt esse ullam quos, dignissimos ex, tempore voluptatibus perferendis. Soluta, facere aut?",
     eatten: false,
   },
   {
     id: 3,
     name: "Cutivate",
     timming: "Morning",
+    des: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque, placeat fugiat. Blanditiis sed fugiat, amet sapiente inventore iure deserunt esse ullam quos, dignissimos ex, tempore voluptatibus perferendis. Soluta, facere aut?",
     eatten: true,
   },
 ];
