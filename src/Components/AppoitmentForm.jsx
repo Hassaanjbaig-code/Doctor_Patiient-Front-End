@@ -8,7 +8,8 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import CloseIcon from "@mui/icons-material/Close";
 
-const AppoitmentForm = ({ Doctor, CloseTheForm }) => {
+const AppoitmentForm = (props) => {
+  const { Doctor, CloseTheForm } = props
   const now = dayjs();
   const [value, setValue] = useState(now);
   const [Reason, setReason] = useState("");
@@ -23,7 +24,7 @@ const AppoitmentForm = ({ Doctor, CloseTheForm }) => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            width: "70%",
+            width: "90%",
             height: "88%",
             bgcolor: "#ababe8",
           }}
@@ -51,14 +52,14 @@ const AppoitmentForm = ({ Doctor, CloseTheForm }) => {
             id="Reason"
             label="Reason why you want to meet the doctor"
             multiline
-            isRequired={true}
+            isrequired="true"
             inputProps={{ maxLength: 100 }}
             rows={4}
             value={Reason}
             onChange={(e) => setReason(e.target.value)}
+            style={{ minWidth: "100%", maxWidth: "90%", width: "100%" }}
             sx={{
               my: 4,
-              width: "70%",
               borderBottom: 1,
               borderColor: "text.primary",
               borderRadius: "16px",

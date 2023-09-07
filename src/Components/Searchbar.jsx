@@ -5,7 +5,7 @@ import { Box } from '@mui/system'
 import Stack from '@mui/material/Stack'
 
 const Searchbar = (props) => {
-  const { medicines, filterMedicine } = props
+  const { medicines, filterMedicine, placeholder } = props
   return (
     <Stack sx={{ width: 300, margin: "auto", marginBottom: 2, marginTop: 2 }}>
       <Autocomplete
@@ -23,14 +23,14 @@ const Searchbar = (props) => {
           title: event.target.value || value.name,
         })
       }}
-      isOptionEqualToValue={(option, value) => option.name === value.name}
-      noOptionsText={'No Medicine Found'}
+      isOptionEqualToValue={(option, value) => option.id === value.id}
+      noOptionsText={'No Found'}
       renderOption={(props, medicines) => (
         <Box component="li" {...props} key={medicines.id}>
           {medicines.name}
         </Box>
       )}
-      renderInput={(params) => <TextField {...params} label="Search Medicine" />}
+      renderInput={(params) => <TextField {...params} label={placeholder} />}
       />
     </Stack>
   )

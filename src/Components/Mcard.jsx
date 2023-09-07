@@ -10,10 +10,15 @@ import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 
 const Mcard = (props) => {
-  // console.log(Medicines)
-  const { medicines } = props
+  const { medicines, filterMedicine } = props
   // const [Medicines, setMedicines] = useState([...medicines])
-  const Medicines = medicines
+  const Medicines = medicines.filter((medicine) => {
+    if (filterMedicine === null) {
+      return medicine
+    } else if (medicine.name.toLowerCase().includes(filterMedicine.title.toLowerCase())) {
+      return medicine
+    }
+  })
   return (
     <Box sx={{ flexGrow: 1 }} >
       <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 8, md: 12 }}>

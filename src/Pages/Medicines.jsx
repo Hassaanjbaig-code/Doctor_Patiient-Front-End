@@ -14,13 +14,9 @@ const Medicines = () => {
     setFilterMedicine(search);
   }
 
-  useEffect(() => {
-    console.log(filterMedicine);
-  }, [filterMedicine]);
-
   return <div>
-    <Searchbar medicines={medicine} filterMedicine={filterMedicines} />
-    <Mcard medicines={medicine} />
+    <Searchbar medicines={medicine} filterMedicine={filterMedicines} placeholder="Search a medicine" />
+    <Mcard medicines={medicine} filterMedicine={filterMedicine} />
   </div>;
 };
 

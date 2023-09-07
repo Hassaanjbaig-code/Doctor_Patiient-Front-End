@@ -53,7 +53,7 @@ export const medicine = [
 
 export const Dr = () => {
   return {
-    id: faker.datatype.uuid(),
+    id: faker.string.uuid(),
     name: "Dr" + faker.person.fullName(),
     role: faker.person.jobTitle(),
     des: faker.lorem.sentence({ min: 2, max: 3 }),
