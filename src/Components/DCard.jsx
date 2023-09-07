@@ -5,7 +5,7 @@ import AppoitmentForm from "./AppoitmentForm";
 
 const DCard = (props) => {
   // const { id, name, role, des, imageUrl, Gloction } = props
-  const { DrUser } = props;
+  const { DrUser, filterMedicine } = props;
 
   const [DoctorId, setDoctorId] = useState(false);
   const [UseDoctor, setUseDoctor] = useState({
@@ -14,6 +14,7 @@ const DCard = (props) => {
     open: false,
   });
 
+  
   const handleClick = (id, name) => {
     // setDoctorId(true);
     setUseDoctor({
@@ -30,13 +31,25 @@ const DCard = (props) => {
     });
     setDoctorId(false);
   };
+  
+  const drUser = DrUser.filter((Doctor) => {
+    if (filterMedicine === null) {
+      return Doctor;
+    } else if (
+      Doctor.name.toLowerCase().includes(filterMedicine.title.toLowerCase())
+    ) {
+      return Doctor;
+    }
+  });
+
+  // console.log(filterMedicine.title);
   return (
     <ul className="Doctor flex flex-1 w-full flex-wrap justify-evenly">
-      {DrUser.map((item, index) => (
-         <li
-         key={index}
-         id={item.id}
-         className="md:w-[23rem] w-[20rem] h-[45rem] shadow-lg border p-3 rounded-md my-5 mx-2 hover:shadow-2xl transition duration-500 ease-linear"
+      {drUser.map((item, index) => (
+        <li
+        key={index}
+        id={item.id}
+        className="md:w-[23rem] w-[20rem] h-[45rem] shadow-lg border p-3 rounded-md my-5 mx-2 hover:shadow-2xl transition duration-500 ease-linear"
        >
          <div className="flex flex-col h-full">
            <div className="">
