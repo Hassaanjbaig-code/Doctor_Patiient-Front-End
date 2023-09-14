@@ -7,7 +7,8 @@ import {
 } from "react-icons/md";
 import { SlCalender } from "react-icons/sl";
 import { GiMedicines } from "react-icons/gi";
-import { Link, BrowserRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 
 const navbar = [
   {
@@ -37,9 +38,12 @@ const navbar = [
   },
 ];
 
-const Navbar = () => {
+const Navbar = ({ Responsive, CloseResponsive }) => {
   return (
-    <nav className="nav">
+    <nav className={` ${Responsive ? "max-md:hidden block" : "block nav"}`}>
+      <button type="button" onClick={CloseResponsive} className="md:hidden">
+        <CloseRoundedIcon fontSize="small" />
+      </button>
       <span className="w-48 ">
         <img src={Mcare} alt="Mcare" />
       </span>

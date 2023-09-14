@@ -1,27 +1,37 @@
-import React from "react";
-import { DCard } from "../Components";
-import { Dr } from "../Constacts";
+import React, { useEffect, useState } from "react";
+import { DCard, Searchbar } from "../Components";
+import { DrUser } from "../Constacts";
 import { faker } from "@faker-js/faker";
 
 function Doctor() {
   // const DrUser = []
 
+  const [ filterMedicine, setFilterMedicine ] = useState(null);
+
+  const filterMedicines = (search) => {
+    if (search === null) {
+      setFilterMedicine(null);
+      return;
+    }
+    // console.log(search);
+    setFilterMedicine(search);
+  }
+
+
+  // console.log(filterMedicine)
+
+
   return (
-    <div className="flex">
-      <ul className="Doctor flex flex-1 w-full flex-wrap justify-evenly">
-        {faker.helpers.multiple(Dr, { count: 5 }).map((item, index) => {
-          return (
+    <div className="flex flex-col">
+      <Searchbar medicines={DrUser} placeholder="Search a Doctor" filterMedicine={filterMedicines}  />
+      {/* <ul className=""> */}
+        {/* {DrUser.map((item, index) => { */}
             <DCard
-              id={index}
-              name={item.name}
-              role={item.role}
-              des={item.des}
-              imageUrl={item.imageUrl}
-              Gloction={item.Gloction}
+              DrUser={DrUser}
+              filterMedicine={filterMedicine}
             />
-          );
-        })}
-      </ul>
+        {/* })} */}
+      {/* </ul> */}
     </div>
   );
 }

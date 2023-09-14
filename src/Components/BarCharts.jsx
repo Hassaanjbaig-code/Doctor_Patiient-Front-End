@@ -17,8 +17,8 @@ const BarCharts = () => {
   return (
     <div className="w-full border shadow-lg mb-2 ">
       <BarChart
-        width={390}
-        height={350}
+        width={330} //390
+        height={350} //350
         data={chart}
         margin={{
           top: 5,

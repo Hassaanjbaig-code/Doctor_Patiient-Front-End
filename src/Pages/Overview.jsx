@@ -29,7 +29,7 @@ const Overview = () => {
           <User_info patient={patient} />
         </div>
       </div>
-      <div className="flex justify-around container">
+      <div className="flex justify-around container max-md:flex-col">
         <div>
           <BarCharts />
         </div>
